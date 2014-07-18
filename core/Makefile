@@ -1679,6 +1679,12 @@ ifneq ($(OSE_BUILD),)
 	@echo -e ""
 	@echo -e ""${CL_RST}
 	@echo -e ${CL_BLU}"Package Complete: $(OSE_TARGET_PACKAGE)"${CL_YLW}
+
+ifeq ($(USE_PREBUILT_CHROMIUM),1)
+ifneq ($(PRODUCT_PREBUILT_WEBVIEWCHROMIUM),yes)
+	@echo "Running Chromium prebuilt setup script..."
+	$(hide) . $(TOPDIR)vendor/ose/utils/chromium_prebuilt.sh $(TOP)
+endif
 endif
 
 check_bacon:
