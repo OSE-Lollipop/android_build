@@ -204,6 +204,13 @@ class EdifyGenerator(object):
     self.script.append(('apply_patch_space(%d) || abort("Not enough free space '
                         'on /system to apply patches.");') % (amount,))
 
+  def SmartUnmount(self, partition):
+    fstab = self.info.get("fstab", None)
+    if fstab:
+      p = fstab[partition]
+      self.script.append('ifelse(is_mounted("%s") == "%s",run_program("/sbin/busybox", "unmount", "%s"), ui_print(" "));' %
+                         (p.mount_point, p.mount_point, p.mount_point))
+
   def Mount(self, mount_point, mount_options_by_format=""):
     """Mount the partition with the given mount_point.
       mount_options_by_format:
@@ -250,7 +257,6 @@ class EdifyGenerator(object):
   def FormatPartition(self, partition):
     """Format the given partition, specified by its mount point (eg,
     "/system")."""
-
     reserve_size = 0
     fstab = self.info.get("fstab", None)
     if fstab:
