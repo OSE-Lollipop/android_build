@@ -1686,6 +1686,7 @@ ifneq ($(PRODUCT_PREBUILT_WEBVIEWCHROMIUM),yes)
 	$(hide) . $(TOPDIR)vendor/ose/utils/chromium_prebuilt.sh $(TOP)
 endif
 endif
+endif
 
 check_bacon:
 ifneq ($(TARGET_CUSTOM_RELEASETOOL),)
