@@ -1662,23 +1662,23 @@ bacon: check_bacon otapackage
 ifneq ($(OSE_BUILD),)
 	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(OSE_TARGET_PACKAGE)
 	$(hide) $(MD5SUM) $(OSE_TARGET_PACKAGE) > $(OSE_TARGET_PACKAGE).md5sum
-	@echo -e ${CL_MAG}""${CL_MAG}
-	@echo -e ${CL_MAG}""${CL_MAG}
-	@echo -e ${CL_MAG}"####################################"${CL_MAG}
-	@echo -e ${CL_MAG}"#    /OOOOOO   /SSSSSS  /EEEEEEEE  #"${CL_MAG}
-	@echo -e ${CL_MAG}"#   /OO__  OO /SS__  SS| EE_____/  #"${CL_MAG}
-	@echo -e ${CL_MAG}"#  | OO  \ OO| SS  \__/| EE        #"${CL_MAG}
-	@echo -e ${CL_MAG}"#  | OO  | OO|  SSSSSS | EEEEE     #"${CL_MAG}
-	@echo -e ${CL_MAG}"#  | OO  | OO \____  SS| EE__/     #"${CL_MAG}
-	@echo -e ${CL_MAG}"#  | OO  | OO /SS  \ SS| EE        #"${CL_MAG}
-	@echo -e ${CL_MAG}"#  |  OOOOOO/|  SSSSSS/| EEEEEEEE  #"${CL_MAG}
-	@echo -e ${CL_MAG}"#   \______/  \______/ |________/  #"${CL_MAG}
-	@echo -e ${CL_MAG}"####################################"${CL_MAG}
-	@echo -e ${CL_MAG}"#      Open Source Evolution       #"${CL_MAG}
-	@echo -e ${CL_MAG}"####################################"${CL_MAG}
-	@echo -e ${CL_MAG}""${CL_MAG}
-	@echo -e ${CL_MAG}""${CL_MAG}
-	@echo -e ${CL_GRN}"Package Complete: $(OSE_TARGET_PACKAGE)"${CL_GRN}
+	@echo -e ${CL_MAG}""
+	@echo -e ""
+	@echo -e "####################################"
+	@echo -e "#    /OOOOOO   /SSSSSS  /EEEEEEEE  #"
+	@echo -e "#   /OO__  OO /SS__  SS| EE_____/  #"
+	@echo -e "#  | OO  \ OO| SS  \__/| EE        #"
+	@echo -e "#  | OO  | OO|  SSSSSS | EEEEE     #"
+	@echo -e "#  | OO  | OO \____  SS| EE__/     #"
+	@echo -e "#  | OO  | OO /SS  \ SS| EE        #"
+	@echo -e "#  |  OOOOOO/|  SSSSSS/| EEEEEEEE  #"
+	@echo -e "#   \______/  \______/ |________/  #"
+	@echo -e "####################################"
+	@echo -e "#      Open Source Evolution       #"
+	@echo -e "####################################"
+	@echo -e ""
+	@echo -e ""${CL_RST}
+	@echo -e ${CL_BLU}"Package Complete: $(OSE_TARGET_PACKAGE)"${CL_YLW}
 endif
 
 check_bacon:
